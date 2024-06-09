@@ -94,3 +94,71 @@ The Python language specification is outlined in the Python Enhancement Proposal
 ### Conclusion
 
 The various implementations of Python cater to different needs, whether it's performance optimization with PyPy, integration with Java via Jython, or embedded systems development with MicroPython. The language specification, primarily driven by PEPs, ensures that Python maintains consistency, readability, and a coherent philosophy across its implementations.
+
+## Variables
+
+Defining variables in python is very easy
+
+```py
+name = "Mostafa"
+age = 23
+height = 175.5
+married = False
+
+```
+
+assigning the same value to multiple variables
+
+```py
+a = b = c = 19
+```
+
+assigning multiple variable in the same line
+
+```py
+a, b = 1, 5
+```
+
+### Type Annotation
+
+Python is a **dynamic-typed language** which means variable types are determined at **run time** unlike **static-typed languages** which types are determined at **compile time**.
+
+in python changing variable's value to completely different types
+
+```py
+
+name = "Mostafa"
+# then somewhere in the program you change value of name to something completely different
+name = 100
+
+```
+
+from **python 3.6** we can annotate variable types
+
+```py
+name: str = "Mostafa"
+age: int = 23
+```
+
+### Mutable and Immutable Types
+
+`id()` is a global function which returns the memory location allocated for the specified identifier
+
+```py
+
+x = 1
+
+print(id(x))# => 1384214063408
+
+x = x + 1
+
+
+print(id(x))# => 1384214063440
+
+nums = [1,2,4]
+print(id(nums)) # => 2331135203072
+
+nums.append(10)
+print(id(nums)) # => 2331135203072
+
+```
