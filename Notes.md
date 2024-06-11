@@ -239,3 +239,82 @@ print("Programming" in course) # use in operator to check if substring is includ
 print("Python" not in course) # not operator also exist to negate
 
 ```
+
+## Numbers
+
+```py
+num = 10
+
+x = 0b10  # 0b followed by a binary number, representation of literal binary numbers
+print(x)
+# bin(num) function return the binary representation of given number
+print(bin(x))
+print(bin(2))
+
+y = 0x12c  # 0x followed by a hexadecimal number, representation of literal hexadecimal numbers
+print(y)
+# hex(num) function return the hexadecimal representation of given number
+print(hex(y))
+print(y)
+
+# a + bi
+z = 1 + 2j
+print(z)
+
+```
+
+### Arithmetic Operations
+
+```py
+a = 1 + 2
+a = 1 - 2
+a = 1 * 2
+a = 1 / 2 # floating-point division
+a = 1 // 2 #
+a = 1 % 2 # remainder or modulus
+a = 1 ** 2 # exponentiation
+
+a += 1
+a -= 1
+a *= 1
+a /= 1.5
+a //= 1
+a %= 1
+a **= 1
+
+# all above are the same pattern as following
+
+a = a + 1
+a = a * 1
+a = a // 1
+```
+
+**Note**: in python unlike other programming languages we don't have _increment_ or _decrement_ operators like `x++` or `x--`
+
+### Working with Numbers
+
+```py
+import math
+
+x = 3.49
+print(math.floor(x))
+print(math.ceil(x))
+print(round(x))
+print(abs(x))
+print(math.pi)
+```
+
+## Type Conversion
+
+Python is a strongly-typed language which means it doesn't perform type conversions on it's own and type conversion is our responsibility, unlike languages like javascript that is loosely-typed language which performs type-conversion without explicitly saying to.
+
+Sometimes we need to convert types from one to another, here are functions used for type-conversion
+
+`str(val)` converts val to string, `int(val)` converts val to integer, `bool(val)` coverts val to boolean, `float(val)` converts val to floating-point,
+
+**Falsy values**:
+**False**, **""**, **[]**, **0** and **None**
+
+**any value that is not falsy is truthy**
+
+
