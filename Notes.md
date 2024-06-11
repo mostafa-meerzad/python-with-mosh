@@ -317,4 +317,77 @@ Sometimes we need to convert types from one to another, here are functions used 
 
 **any value that is not falsy is truthy**
 
+## Conditional Statements
 
+In python we don't have parenthesis or curly-braces for conditional statements just **indentation**
+
+```py
+age = 24
+
+if age >= 18:
+    print("Adult")
+elif age >= 13:
+    print("Teenager")
+else:
+    print("Child")
+
+print("All done!")
+
+```
+
+if you need to have an empty block use **pass** keyword
+
+```py
+if x > 1:
+   pass
+else:
+   pass
+```
+
+## Logical Operators
+
+`and`, `or` and `not` are logical operators
+
+```py
+
+# name = "John"
+name = ""
+
+# name = " "  # " " a string with just one space is not considered an empty string
+# if not name.strip(): # solution is to strip the white-spaces
+
+if not name.strip():
+    print("name is empty")
+
+age = 19
+
+if age >= 18 and age < 65:
+    print("Eligible")
+
+# the same comparison as above
+if 18 <= age < 65: # this is called chaining comparison-operators
+    print("Eligible")
+
+```
+
+## Ternary Operator
+
+```py
+age = 22
+
+if age >= 18:
+    message = "Eligible"
+else:
+    message = "Not Eligible"
+print(message)
+```
+
+same statement with ternary-operator in python way
+
+```py
+
+age = 22
+message = "Eligible" if age >= 18 else "Not Eligible"
+print(message)
+
+```
