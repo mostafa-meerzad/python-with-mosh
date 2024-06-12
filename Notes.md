@@ -2,29 +2,42 @@
 
 ## Intro
 
-Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability and syntax that allows programmers to express concepts in fewer lines of code compared to other languages like C++ or Java.
+Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van
+Rossum and first released in 1991, Python's design philosophy emphasizes code readability and syntax that allows
+programmers to express concepts in fewer lines of code compared to other languages like C++ or Java.
 
 ### Key Features of Python:
 
-1. **Simple and Easy to Learn**: Python's syntax is designed to be intuitive and its language constructs make it easy to learn, even for beginners.
-2. **Versatile**: Python is a general-purpose language used for web development, data analysis, artificial intelligence, scientific computing, automation, and more.
-3. **Interpreted Language**: Python code is executed line-by-line, which makes debugging easier but can impact performance.
-4. **Extensive Standard Library**: Python comes with a large standard library that includes modules and packages for virtually every task, from file I/O to web development.
-5. **Cross-Platform**: Python is available on multiple operating systems including Windows, macOS, and Linux, which allows for cross-platform development.
-6. **Community Support**: Python has a large and active community, contributing to a wealth of third-party modules and tools, as well as extensive documentation and tutorials.
+1. **Simple and Easy to Learn**: Python's syntax is designed to be intuitive and its language constructs make it easy to
+   learn, even for beginners.
+2. **Versatile**: Python is a general-purpose language used for web development, data analysis, artificial intelligence,
+   scientific computing, automation, and more.
+3. **Interpreted Language**: Python code is executed line-by-line, which makes debugging easier but can impact
+   performance.
+4. **Extensive Standard Library**: Python comes with a large standard library that includes modules and packages for
+   virtually every task, from file I/O to web development.
+5. **Cross-Platform**: Python is available on multiple operating systems including Windows, macOS, and Linux, which
+   allows for cross-platform development.
+6. **Community Support**: Python has a large and active community, contributing to a wealth of third-party modules and
+   tools, as well as extensive documentation and tutorials.
 
 ### Common Use Cases:
 
 - **Web Development**: Frameworks like Django and Flask make Python a popular choice for backend web development.
-- **Data Science and Machine Learning**: Libraries such as Pandas, NumPy, and Scikit-learn are widely used in data analysis and machine learning.
-- **Automation**: Python's simplicity and readability make it an excellent choice for scripting and automating repetitive tasks.
-- **Software Development**: Python is used in developing desktop applications, game development, and even network servers.
+- **Data Science and Machine Learning**: Libraries such as Pandas, NumPy, and Scikit-learn are widely used in data
+  analysis and machine learning.
+- **Automation**: Python's simplicity and readability make it an excellent choice for scripting and automating
+  repetitive tasks.
+- **Software Development**: Python is used in developing desktop applications, game development, and even network
+  servers.
 
-Python's combination of simplicity, versatility, and a strong support community has made it one of the most popular programming languages in the world.
+Python's combination of simplicity, versatility, and a strong support community has made it one of the most popular
+programming languages in the world.
 
 ## Python implementation and specification
 
-Python has several implementations, each catering to different use cases and performance needs. Here’s an overview of the most notable implementations and the official specification that guides them:
+Python has several implementations, each catering to different use cases and performance needs. Here’s an overview of
+the most notable implementations and the official specification that guides them:
 
 ### Major Python Implementations
 
@@ -41,7 +54,8 @@ Python has several implementations, each catering to different use cases and per
 
    - **Description**: An alternative implementation of Python, focusing on speed and efficiency.
    - **Features**:
-     - Just-In-Time (JIT) compiler that translates Python code to machine code at runtime, offering significant speed improvements for many workloads.
+     - Just-In-Time (JIT) compiler that translates Python code to machine code at runtime, offering significant speed
+       improvements for many workloads.
      - Compatible with the majority of Python code.
    - **Use Cases**: Applications requiring high performance, such as numerical computations and long-running processes.
 
@@ -57,7 +71,8 @@ Python has several implementations, each catering to different use cases and per
 
    - **Description**: Implementation of Python for the .NET framework.
    - **Features**:
-     - Translates Python code into .NET Intermediate Language (IL), which can be executed by the Common Language Runtime (CLR).
+     - Translates Python code into .NET Intermediate Language (IL), which can be executed by the Common Language
+       Runtime (CLR).
      - Integrates with .NET libraries and services.
    - **Use Cases**: Applications that need to leverage .NET infrastructure or interact with other .NET languages.
 
@@ -70,22 +85,26 @@ Python has several implementations, each catering to different use cases and per
 
 ### Python Language Specification
 
-The Python language specification is outlined in the Python Enhancement Proposals (PEPs), which are documents that describe new features, processes, and information about the Python language. Key PEPs include:
+The Python language specification is outlined in the Python Enhancement Proposals (PEPs), which are documents that
+describe new features, processes, and information about the Python language. Key PEPs include:
 
 1. **PEP 8**:
 
    - **Title**: Style Guide for Python Code
-   - **Content**: Provides conventions for writing readable and maintainable Python code, including naming conventions, indentation, and more.
+   - **Content**: Provides conventions for writing readable and maintainable Python code, including naming conventions,
+     indentation, and more.
 
 2. **PEP 20**:
 
    - **Title**: The Zen of Python
-   - **Content**: A collection of aphorisms that capture the philosophy of Python, emphasizing simplicity, readability, and the importance of writing explicit code.
+   - **Content**: A collection of aphorisms that capture the philosophy of Python, emphasizing simplicity, readability,
+     and the importance of writing explicit code.
 
 3. **PEP 484**:
 
    - **Title**: Type Hints
-   - **Content**: Introduces optional type hinting to Python, enabling static type checking and better code clarity without changing the runtime behavior.
+   - **Content**: Introduces optional type hinting to Python, enabling static type checking and better code clarity
+     without changing the runtime behavior.
 
 4. **PEP 257**:
    - **Title**: Docstring Conventions
@@ -93,7 +112,10 @@ The Python language specification is outlined in the Python Enhancement Proposal
 
 ### Conclusion
 
-The various implementations of Python cater to different needs, whether it's performance optimization with PyPy, integration with Java via Jython, or embedded systems development with MicroPython. The language specification, primarily driven by PEPs, ensures that Python maintains consistency, readability, and a coherent philosophy across its implementations.
+The various implementations of Python cater to different needs, whether it's performance optimization with PyPy,
+integration with Java via Jython, or embedded systems development with MicroPython. The language specification,
+primarily driven by PEPs, ensures that Python maintains consistency, readability, and a coherent philosophy across its
+implementations.
 
 ## Variables
 
@@ -121,7 +143,8 @@ a, b = 1, 5
 
 ### Type Annotation
 
-Python is a **dynamic-typed language** which means variable types are determined at **run time** unlike **static-typed languages** which types are determined at **compile time**.
+Python is a **dynamic-typed language** which means variable types are determined at **run time** unlike **static-typed
+languages** which types are determined at **compile time**.
 
 in python changing variable's value to completely different types
 
@@ -148,18 +171,17 @@ age: int = 23
 
 x = 1
 
-print(id(x))# => 1384214063408
+print(id(x))  # => 1384214063408
 
 x = x + 1
 
+print(id(x))  # => 1384214063440
 
-print(id(x))# => 1384214063440
-
-nums = [1,2,4]
-print(id(nums)) # => 2331135203072
+nums = [1, 2, 4]
+print(id(nums))  # => 2331135203072
 
 nums.append(10)
-print(id(nums)) # => 2331135203072
+print(id(nums))  # => 2331135203072
 
 ```
 
@@ -171,17 +193,17 @@ Strings are immutable data-types
 
 ```py
 course = "Python Programming"
-print(len(course)) # 18 => number of characters in the string
-print(course[0]) # p => first character of string
-print(course[-1]) # g => first element form the end of the string
-print(course[0:3]) # pyt => a slice of string starting from 0 (first element) to 3 (fourth element but except itself)
-print(course[:]) # Python Programming => from first to last element or the whole string
-print(course[:2]) # Pyt =>starting point omitted 0 used as default value
-print(course[4:]) # on Programming => ending point omitted len(course) used as default value
+print(len(course))  # 18 => number of characters in the string
+print(course[0])  # p => first character of string
+print(course[-1])  # g => first element form the end of the string
+print(course[0:3])  # pyt => a slice of string starting from 0 (first element) to 3 (fourth element but except itself)
+print(course[:])  # Python Programming => from first to last element or the whole string
+print(course[:2])  # Pyt =>starting point omitted 0 used as default value
+print(course[4:])  # on Programming => ending point omitted len(course) used as default value
 
 # strings are immutable therefore new memory is located for each string operation
-print(id(course)) # 1345471682240
-print(id(course[0])) # 1345471658224
+print(id(course))  # 1345471682240
+print(id(course[0]))  # 1345471658224
 ```
 
 ### Scape Sequences
@@ -198,16 +220,17 @@ formatted string unlike string literal isn't a value instead is an expression wh
 
 `F""`, `f""`, `f''` and `F''` are all the same and represent a formatted-string
 
-`{}` are used within formatted-strings to include a dynamic value or in general we can put any valid expression within `{}`
+`{}` are used within formatted-strings to include a dynamic value or in general we can put any valid expression
+within `{}`
 
 ```py
 
 first = "Mostafa"
 last = "Meerzad"
-full = first + " " + last # string concatenation
+full = first + " " + last  # string concatenation
 
-full = f"{first} {last}" # formatted string
-full = F"{first} {last}" # formatted string
+full = f"{first} {last}"  # formatted string
+full = F"{first} {last}"  # formatted string
 
 print(full)
 print(f"this is the length of fullName {len(full)}")
@@ -218,25 +241,25 @@ print(f"this is the length of fullName {len(full)}")
 ```py
 course = " Python Programming on"
 
-print(course.upper()) # returns a copy of the string turned into uppercase
-print(course.lower()) # returns a copy of the string turned into lowercase
+print(course.upper())  # returns a copy of the string turned into uppercase
+print(course.lower())  # returns a copy of the string turned into lowercase
 print(course.split(" "))  # returns a list of parts of the string separated with the provided separator
-print(course.strip()) # returns a copy of string with leading and trailing whitespaces removed
-print(course.rstrip()) # stript right
-print(course.lstrip()) # strip left
-print(course.count("on", 0, 9)) # Return the number of non-overlapping occurrences of substring sub in string
+print(course.strip())  # returns a copy of string with leading and trailing whitespaces removed
+print(course.rstrip())  # stript right
+print(course.lstrip())  # strip left
+print(course.count("on", 0, 9))  # Return the number of non-overlapping occurrences of substring sub in string
 print(course.count("m"))
-print(course.casefold()) # removes casing, useful for comparison
-print(course.istitle()) # True if string is titleCase
+print(course.casefold())  # removes casing, useful for comparison
+print(course.istitle())  # True if string is titleCase
 print(course.islower())
 print(course.isupper())
-print(course.isalnum()) # True if string is alphanumeric (mix of letters and numbers)
+print(course.isalnum())  # True if string is alphanumeric (mix of letters and numbers)
 
-print(course.find("Pro")) # returns the starting index of substring -1 if non existing
-print(course.replace(" ", "#")) # reruns a copy of string with characters replaced
+print(course.find("Pro"))  # returns the starting index of substring -1 if non existing
+print(course.replace(" ", "#"))  # reruns a copy of string with characters replaced
 
-print("Programming" in course) # use in operator to check if substring is included in the string
-print("Python" not in course) # not operator also exist to negate
+print("Programming" in course)  # use in operator to check if substring is included in the string
+print("Python" not in course)  # not operator also exist to negate
 
 ```
 
@@ -269,10 +292,10 @@ print(z)
 a = 1 + 2
 a = 1 - 2
 a = 1 * 2
-a = 1 / 2 # floating-point division
-a = 1 // 2 #
-a = 1 % 2 # remainder or modulus
-a = 1 ** 2 # exponentiation
+a = 1 / 2  # floating-point division
+a = 1 // 2  #
+a = 1 % 2  # remainder or modulus
+a = 1 ** 2  # exponentiation
 
 a += 1
 a -= 1
@@ -289,7 +312,8 @@ a = a * 1
 a = a // 1
 ```
 
-**Note**: in python unlike other programming languages we don't have _increment_ or _decrement_ operators like `x++` or `x--`
+**Note**: in python unlike other programming languages we don't have _increment_ or _decrement_ operators like `x++`
+or `x--`
 
 ### Working with Numbers
 
@@ -306,11 +330,14 @@ print(math.pi)
 
 ## Type Conversion
 
-Python is a strongly-typed language which means it doesn't perform type conversions on it's own and type conversion is our responsibility, unlike languages like javascript that is loosely-typed language which performs type-conversion without explicitly saying to.
+Python is a strongly-typed language which means it doesn't perform type conversions on it's own and type conversion is
+our responsibility, unlike languages like javascript that is loosely-typed language which performs type-conversion
+without explicitly saying to.
 
 Sometimes we need to convert types from one to another, here are functions used for type-conversion
 
-`str(val)` converts val to string, `int(val)` converts val to integer, `bool(val)` coverts val to boolean, `float(val)` converts val to floating-point,
+`str(val)` converts val to string, `int(val)` converts val to integer, `bool(val)` coverts val to boolean, `float(val)`
+converts val to floating-point,
 
 **Falsy values**:
 **False**, **""**, **[]**, **0** and **None**
@@ -339,9 +366,9 @@ if you need to have an empty block use **pass** keyword
 
 ```py
 if x > 1:
-   pass
+    pass
 else:
-   pass
+    pass
 ```
 
 ## Logical Operators
@@ -365,7 +392,7 @@ if age >= 18 and age < 65:
     print("Eligible")
 
 # the same comparison as above
-if 18 <= age < 65: # this is called chaining comparison-operators
+if 18 <= age < 65:  # this is called chaining comparison-operators
     print("Eligible")
 
 ```
@@ -412,14 +439,17 @@ for x in range(10):
     print(x)
 ```
 
-`range(start, end, step)` range function is used to create an iterable sequence of numbers, range function returns a **range object**, range-objects take very little amount of memory unlike lists that take a lot of memory in case of really large objects.
+`range(start, end, step)` range function is used to create an iterable sequence of numbers, range function returns a \*
+\*range object\*\*, range-objects take very little amount of memory unlike lists that take a lot of memory in case of
+really large objects.
 
 range object generates one element for each iteration instead of creating all elements at once!
 
 ```py
-range(5000000) # -> range object
+range(5000000)  # -> range object
 
-[list, with , 5000000, elements] # -> takes very large space
+[list,
+with , 5000000, elements]  # -> takes very large space
 ```
 
 ```py
@@ -429,7 +459,8 @@ for x in range(2, 10, 2):
 
 #### For...Else
 
-Consider a scenario that you have a list of names and want to find the first name matching our criteria and immediately jump out of the loop (for performance reasons) display a message if no matching name found
+Consider a scenario that you have a list of names and want to find the first name matching our criteria and immediately
+jump out of the loop (for performance reasons) display a message if no matching name found
 
 ```py
  names = ["John", "Mary"]
@@ -486,3 +517,172 @@ else:
     print("you didn't guess the king number but guessed the correct answer")
 
 ```
+
+## Functions
+
+```py
+def functionName(parameters):
+    # function block
+    # statements
+    # statements
+    # statements
+    # ...
+    return values  # return one value
+    return (val1, val2, vals...)  # return a tuple (like a read only list) of values
+
+
+functionName(args)
+```
+
+**Note**:
+
+1. **default return value**: returned from functions is **None**
+2. **keyword arguments**: when you need to explicitly assign a value to a function
+   argument `function(firstArg=value, arg, arg)`
+
+```py
+def increment(number, by):
+    print("incrementing...")
+    return number + by
+    return (number, by, number + by)
+
+
+print(increment(100, by=2))
+```
+
+3. **assigning default value to a function-parameter**
+
+```py
+def increment(number, by=10):
+    print("incrementing...")
+    return number + by
+    return (number, by, number + by)
+
+
+print(increment(100))  # by argument is not specified
+print(increment(100, 2))  # by argument is specified
+```
+
+4. **type annotation**
+
+```py
+#            number: type, by: type   -> return type :
+def increment(number: int, by: int = 10) -> int:
+    print("incrementing...")
+    return number + by
+
+
+def increment(number: int, by: int = 10) -> tuple:
+    print("incrementing...")
+    return (number, number + by)
+```
+
+### \*args, arguments
+
+when you need to pass an arbitrary number of arguments to a function use can use `def functionName(*args)`
+`*args` return a tuple of all passed arguments to the function which we can iterate over
+
+```py
+
+def myFunction(*args):
+    printargs  # this return a tuple of arguments
+    for x in args:
+        print(x)
+
+
+myFunction(1, 2, 3, 5, 6, 7)
+```
+
+### \*\*args, keyword arguments
+
+if we need to pass an arbitrary number of keyword-arguments to a function use `def functionName(**kwarg)`
+`**kwargs` return a dictionary of all keyword-arguments
+
+```pycon
+
+def saveUser(**kwargs):
+    kwargs # returns a dictionary of provided keyword-arguments
+    print(kwargs)
+
+```
+
+## Variable Scopes
+
+In Python we have two types of variables:
+
+1. file level variables:
+   variables defined in file scope which are also called global variables are visible/accessible to all the functions
+   inside the file
+2. function level variables:
+   variables defined inside functions are only visible/accessible inside those functions
+
+variables in python are not block leve unlike other programming languages which means variables defined inside a
+block of code is accessible to the outside scope as well
+
+```python
+message = "global message"  # a global variable
+
+
+def greet():
+    # accessing global message variable before making it a local variable
+    print(message)  # message still shows global value 'global message'
+
+    # if you assign global variable another value in this function block
+    # like so
+    message = "new message"
+    # python will create another local variable with the same name 'message' and assign it the new value
+    # doing so as no effect on the global value
+
+    print(message)  # message is now a local variable and has 'new message'
+
+
+print(message)  # message is 'global message'
+
+def sayHi():
+    # block level variables are accessible throughout the function
+    message = "Hello" # function level variable
+
+    if True:
+        print(message)
+        other = "CONDITIONAL" # var defined inside code-block
+
+    for x in [1,2]:
+        print(x)
+        print(message)
+        another = "LOOP" # var defined inside loop body
+
+    print("var defined in conditional statement ", other)
+    print("var defined in loop ", another)
+    print("var defined in function ", message)
+
+sayHi()
+
+```
+
+changing value of a global variable
+
+```python
+
+def sayHi():
+    # if you need to change the value of a global variable here is how
+    global message
+    message = "Hello global" # function level variable
+
+    if True:
+        print(message)
+        other = "CONDITIONAL" # var defined inside code-block
+
+    for x in [1,2]:
+        print(x)
+        print(message)
+        another = "LOOP" # var defined inside loop body
+
+    print("var defined in conditional statement ", other)
+    print("var defined in loop ", another)
+    print("var defined in function ", message)
+
+sayHi()
+
+```
+
+**Note**: avoid using/modifying global variables because there might be other functions and parts of code relying on the value of it, this is a bad practice!
