@@ -419,6 +419,7 @@ zip(*iterables)
   ```
 
 - **Dictionary Creation**: When you want to create a dictionary from two related lists.
+
   ```python
   keys = ['name', 'age', 'city']
   values = ['Alice', 25, 'New York']
@@ -427,3 +428,139 @@ zip(*iterables)
   print(dictionary)
   # Output: {'name': 'Alice', 'age': 25, 'city': 'New York'}
   ```
+
+## Stack
+
+In Python, stacks can be represented using various data structures such as lists or using the `collections.deque` class. Below, we'll discuss both approaches and provide examples.
+
+### Using Lists as Stacks
+
+The simplest way to implement a stack in Python is by using a list. Lists provide the `append()` method to add items to the stack and the `pop()` method to remove items from the stack, both of which operate in O(1) time.
+
+Here is an example:
+
+```python
+# Using list as a stack
+stack = []
+
+# Push items onto the stack
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+print("Initial stack:")
+print(stack)
+
+# Pop items from the stack
+print("\nElements popped from the stack:")
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+
+print("\nStack after removing elements:")
+print(stack)
+
+# Empty stack truthy check
+if not stack:
+    print("stack is empty!")
+```
+
+### Using `collections.deque` as a Stack
+
+While lists are straightforward for stack operations, the `collections.deque` class can also be used. The `deque` class provides an efficient and thread-safe way to perform append and pop operations from both ends. However, for a stack, we'll only use the right end.
+
+Here is an example using `deque`:
+
+```python
+from collections import deque
+
+# Initialize a deque
+stack = deque()
+
+# Push items onto the stack
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+print("Initial stack:")
+print(stack)
+
+# Pop items from the stack
+print("\nElements popped from the stack:")
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+
+print("\nStack after removing elements:")
+print(stack)
+```
+
+### Explanation of Stack Operations
+
+- **Push Operation**: Add an element to the top of the stack.
+
+  - For lists: `stack.append(item)`
+  - For `deque`: `stack.append(item)`
+
+- **Pop Operation**: Remove and return the top element of the stack.
+
+  - For lists: `stack.pop()`
+  - For `deque`: `stack.pop()`
+
+- **Peek Operation**: Return the top element without removing it (not directly available in `deque` but can be achieved by accessing the last element).
+  - For lists: `stack[-1]`
+  - For `deque`: `stack[-1]`
+
+### Example with Peek Operation
+
+Here's how you can implement a peek operation in both list-based and deque-based stacks:
+
+#### List-based Stack with Peek
+
+```python
+# Using list as a stack with peek
+stack = []
+
+# Push items onto the stack
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+# Peek at the top item
+top_item = stack[-1]
+print("Top item (peek):", top_item)
+
+# Pop items from the stack
+stack.pop()
+stack.pop()
+stack.pop()
+```
+
+#### Deque-based Stack with Peek
+
+```python
+from collections import deque
+
+# Initialize a deque
+stack = deque()
+
+# Push items onto the stack
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+# Peek at the top item
+top_item = stack[-1]
+print("Top item (peek):", top_item)
+
+# Pop items from the stack
+stack.pop()
+stack.pop()
+stack.pop()
+```
+
+### Summary
+
+- **Lists** are simple and efficient for implementing stacks in Python using `append()` and `pop()` methods.
+- **`collections.deque`** provides a thread-safe and efficient way to implement stacks, with O(1) operations for appending and popping elements from the right end.
+- Both approaches allow you to perform typical stack operations like push, pop, and peek effectively.
