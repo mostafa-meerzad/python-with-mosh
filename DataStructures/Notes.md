@@ -2,6 +2,147 @@
 
 ## List
 
+Lists in Python are a versatile and widely-used data structure that allow you to store collections of items. Here are the key characteristics and functionalities of lists:
+
+### Characteristics of Lists
+
+1. **Ordered**: The items in a list are ordered. This means that each item has a specific position within the list, and this position does not change unless you explicitly modify the list.
+2. **Mutable**: Unlike tuples, lists are mutable, meaning you can change their content by adding, removing, or modifying elements.
+3. **Dynamic**: Lists can grow and shrink as needed, accommodating any number of elements.
+4. **Heterogeneous**: Lists can contain elements of different data types, including other lists.
+
+### Creating Lists
+
+You can create lists using square brackets `[]` or the `list()` constructor:
+
+- **Using square brackets**:
+
+  ```python
+  my_list = [1, 2, 3]
+  ```
+
+- **Using the `list()` function**:
+
+  ```python
+  my_list = list((1, 2, 3))
+  ```
+
+- **Creating an empty list**:
+  ```python
+  empty_list = []
+  empty_list = list()
+  ```
+
+### Accessing List Elements
+
+You can access elements in a list using indexing, similar to arrays in other programming languages:
+
+- **Indexing**:
+
+  ```python
+  my_list = [1, 2, 3]
+  print(my_list[0])  # Output: 1
+  print(my_list[1])  # Output: 2
+  print(my_list[2])  # Output: 3
+  ```
+
+- **Negative indexing**:
+
+  ```python
+  print(my_list[-1])  # Output: 3
+  print(my_list[-2])  # Output: 2
+  print(my_list[-3])  # Output: 1
+  ```
+
+- **Slicing**:
+  ```python
+  print(my_list[0:2])  # Output: [1, 2]
+  print(my_list[:2])   # Output: [1, 2]
+  print(my_list[1:])   # Output: [2, 3]
+  print(my_list[:])    # Output: [1, 2, 3]
+  ```
+
+### Modifying Lists
+
+Lists can be modified in several ways:
+
+- **Adding elements**:
+
+  ```python
+  my_list.append(4)        # Adds 4 to the end of the list
+  my_list.insert(1, 1.5)   # Inserts 1.5 at index 1
+  ```
+
+- **Removing elements**:
+
+  ```python
+  my_list.remove(1)        # Removes the first occurrence of 1
+  removed_item = my_list.pop(1)  # Removes and returns the item at index 1
+  last_item = my_list.pop()      # Removes and returns the last item
+  my_list.clear()          # Removes all elements
+  ```
+
+- **Modifying elements**:
+  ```python
+  my_list[0] = 10          # Changes the first element to 10
+  my_list[1:3] = [20, 30]  # Changes elements at index 1 and 2
+  ```
+
+### List Operations
+
+Lists support various operations:
+
+- **Concatenation**:
+
+  ```python
+  list1 = [1, 2, 3]
+  list2 = [4, 5, 6]
+  combined = list1 + list2  # Output: [1, 2, 3, 4, 5, 6]
+  ```
+
+- **Repetition**:
+
+  ```python
+  repeated = list1 * 2      # Output: [1, 2, 3, 1, 2, 3]
+  ```
+
+- **Checking membership**:
+  ```python
+  is_in_list = 2 in list1   # Output: True
+  ```
+
+### List Comprehensions
+
+List comprehensions provide a concise way to create lists:
+
+```python
+squares = [x**2 for x in range(5)]  # Output: [0, 1, 4, 9, 16]
+```
+
+### Common List Methods
+
+- `append(item)`: Adds an item to the end of the list.
+- `extend(iterable)`: Extends the list by appending all the items from the iterable.
+- `insert(index, item)`: Inserts an item at a given position.
+- `remove(item)`: Removes the first occurrence of an item.
+- `pop([index])`: Removes and returns the item at the given position (last item if index is not provided).
+- `clear()`: Removes all items from the list.
+- `index(item, [start], [end])`: Returns the index of the first occurrence of the item.
+- `count(item)`: Returns the number of occurrences of the item.
+- `sort([key], [reverse])`: Sorts the items of the list in place.
+- `reverse()`: Reverses the elements of the list in place.
+- `copy()`: Returns a shallow copy of the list.
+
+### Use Cases of Lists
+
+1. **Dynamic Data Storage**: Suitable for collections of items that may change in size.
+2. **Iteration and Filtering**: Useful for loops and comprehensions.
+3. **Homogeneous and Heterogeneous Data**: Can store elements of the same type or different types.
+
+### Summary
+
+Lists in Python are a powerful and flexible data structure that can store ordered collections of items. They support a wide range of operations, including modification, iteration, and sorting, making them an essential tool for many programming tasks.
+
 A **list** is a data-type showing a list of objects, element types doesn't matter it can be of any type
 
 ```py
@@ -40,6 +181,10 @@ print(generatedLetters)
 ### Accessing Items
 
 lists are 0 based index and its elements is accessed using `listName[index]`, index 0 is the first element` list-length - 1` is the last element, positive index gives element form start to end, negative index give element form the end
+
+`listName[-1]` returns the very-first element
+
+accessing an element outside the list range throws an `IndexError`
 
 ```py
 myList = [1,2,3,5,6]
@@ -564,3 +709,148 @@ stack.pop()
 - **Lists** are simple and efficient for implementing stacks in Python using `append()` and `pop()` methods.
 - **`collections.deque`** provides a thread-safe and efficient way to implement stacks, with O(1) operations for appending and popping elements from the right end.
 - Both approaches allow you to perform typical stack operations like push, pop, and peek effectively.
+
+## Queues
+
+In Python, queues can be represented using various built-in data structures such as lists or using modules that provide more efficient implementations for queue operations. One such module is the `collections` module, which includes the `deque` class.
+
+### Using Lists as Queues
+
+You can use a Python list to implement a queue, where you can add items to the end and remove items from the front. Here's a basic example:
+
+```python
+# Using list as a queue
+queue = []
+
+# Enqueue
+queue.append('a')
+queue.append('b')
+queue.append('c')
+
+print("Initial queue")
+print(queue) 
+
+# Dequeue
+print("\nElements dequeued from queue")
+print(queue.pop(0))
+print(queue.pop(0))
+print(queue.pop(0))
+
+print("\nQueue after removing elements")
+print(queue)
+```
+
+While this approach works, it is not the most efficient because removing elements from the front of the list (using `pop(0)`) requires shifting all the remaining elements, which is an O(n) operation.
+
+### Using `collections.deque`
+
+The `collections.deque` (double-ended queue) class is a more efficient way to implement queues in Python. It provides an O(1) time complexity for append and pop operations from both ends of the deque.
+
+#### Basic Operations
+
+Here's how to use `collections.deque` to implement a queue:
+
+```python
+from collections import deque
+
+# Initialize a deque
+queue = deque()
+
+# Enqueue
+queue.append('a')
+queue.append('b')
+queue.append('c')
+
+print("Initial queue")
+print(queue)
+
+# Dequeue
+print("\nElements dequeued from the queue")
+print(queue.popleft())
+print(queue.popleft())
+print(queue.popleft())
+
+print("\nQueue after removing elements")
+print(queue)
+```
+
+#### Explanation of `deque` methods
+
+- `append(x)`: Adds `x` to the right end of the deque.
+- `appendleft(x)`: Adds `x` to the left end of the deque.
+- `pop()`: Removes and returns an element from the right end of the deque. Raises an `IndexError` if the deque is empty.
+- `popleft()`: Removes and returns an element from the left end of the deque. Raises an `IndexError` if the deque is empty.
+- `extend(iterable)`: Extends the right side of the deque by appending elements from the iterable.
+- `extendleft(iterable)`: Extends the left side of the deque by appending elements from the iterable (note that the order of elements is reversed).
+- `rotate(n)`: Rotates the deque n steps to the right. If n is negative, it rotates to the left.
+- `maxlen`: When provided, it sets the maximum length of the deque. Once the deque reaches the maximum length, any new elements added will discard elements from the opposite end.
+
+### Example of a Bounded `deque`
+
+You can also create a deque with a maximum length. This is useful for implementing fixed-size queues or buffers.
+
+```python
+# Initialize a deque with a maximum length
+bounded_queue = deque(maxlen=3)
+
+# Enqueue
+bounded_queue.append('a')
+bounded_queue.append('b')
+bounded_queue.append('c')
+print("Bounded queue after adding 3 elements:")
+print(bounded_queue)
+
+# Adding another element will discard the leftmost one
+bounded_queue.append('d')
+print("Bounded queue after adding another element:")
+print(bounded_queue)
+```
+
+In this example, the maximum length of the deque is 3. When a fourth element is added, the leftmost element is discarded to make space for the new one.
+
+### Summary
+
+- Lists can be used to implement queues but are less efficient for dequeue operations.
+- The `collections.deque` class is optimized for queue operations, providing O(1) time complexity for append and pop operations from both ends.
+- `deque` supports various methods that allow you to manipulate the queue efficiently, and it can be bounded to limit its maximum size.
+
+#### How rotate(n) Works
+
+- Positive n: When n is positive, the rotation moves elements from the end of the deque to the beginning. Each element is shifted to the right by n positions.
+- Negative n: When n is negative, the rotation moves elements from the beginning of the deque to the end. Each element is shifted to the left by |n| positions.
+
+Here's a detailed example to illustrate how rotate(n) works:
+
+##### Example with rotate(n)
+
+Initializing a `Deque`
+
+```python
+from collections import deque
+
+# Initialize a deque with some elements
+dq = deque(['a', 'b', 'c', 'd', 'e'])
+
+print("Initial deque:")
+print(dq)
+```
+
+Rotating to the Right (Positive n)
+
+```python
+# Rotate the deque to the right by 2 steps
+dq.rotate(2)
+
+print("\nDeque after rotating to the right by 2 steps:")
+print(dq)
+```
+
+Explanation: The last two elements `d` and `e` move to the front, resulting in `deque(['d', 'e', 'a', 'b', 'c'])`.
+
+```python
+# Rotate the deque to the left by 3 steps
+dq.rotate(-3)
+
+print("\nDeque after rotating to the left by 3 steps:")
+print(dq)
+```
