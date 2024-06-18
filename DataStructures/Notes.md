@@ -854,3 +854,116 @@ dq.rotate(-3)
 print("\nDeque after rotating to the left by 3 steps:")
 print(dq)
 ```
+
+## Tuples
+
+Tuples in Python are a type of data structure that can store a sequence of values. They are similar to lists but have a few key differences:
+
+1. **Immutability**: Once a tuple is created, its contents cannot be changed. This means you cannot add, remove, or modify elements in a tuple after it is created. This immutability makes tuples useful for storing data that should not be modified.
+
+2. **Syntax**: Tuples are defined using parentheses `()` whereas lists use square brackets `[]`. For example:
+
+   ```python
+   my_tuple = (1, 2, 3)
+   my_list = [1, 2, 3]
+   ```
+
+3. **Usage**: Tuples are often used to group related data. For example, a function that returns multiple values can return them as a tuple. Tuples can also be used as keys in dictionaries because they are immutable.
+
+### Creating Tuples
+
+Tuples can be created in several ways:
+
+- **Using parentheses**:
+
+  ```python
+  my_tuple = (1, 2, 3)
+  ```
+
+- **Without parentheses (implicit creation)**:
+
+  ```python
+  my_tuple = 1, 2, 3
+  ```
+
+- **Single element tuple (note the comma)**:
+
+  ```python
+  single_element_tuple = (1,)
+  ```
+
+- **Using the `tuple()` function**:
+  ```python
+  my_tuple = tuple([1, 2, 3])
+  ```
+
+### Accessing Tuple Elements
+
+Elements in a tuple can be accessed using indexing, similar to lists:
+
+```python
+my_tuple = (1, 2, 3)
+print(my_tuple[0])  # Output: 1
+print(my_tuple[1])  # Output: 2
+print(my_tuple[2])  # Output: 3
+```
+
+### Tuple Operations
+
+While you cannot modify a tuple, you can perform operations such as concatenation and repetition:
+
+- **Concatenation**:
+
+  ```python
+  tuple1 = (1, 2, 3)
+  tuple2 = (4, 5, 6)
+  combined = tuple1 + tuple2
+  print(combined)  # Output: (1, 2, 3, 4, 5, 6)
+  ```
+
+- **Repetition**:
+  ```python
+  my_tuple = (1, 2, 3)
+  repeated = my_tuple * 2
+  print(repeated)  # Output: (1, 2, 3, 1, 2, 3)
+  ```
+
+### Tuple Unpacking
+
+Tuples allow for easy unpacking of values:
+
+```python
+my_tuple = (1, 2, 3)
+a, b, c = my_tuple
+print(a)  # Output: 1
+print(b)  # Output: 2
+print(c)  # Output: 3
+```
+
+### Use Cases of Tuples
+
+1. **Returning Multiple Values from Functions**:
+
+   ```python
+   def get_coordinates():
+       return (10, 20)
+
+   x, y = get_coordinates()
+   ```
+
+2. **Immutable Data Storage**: When you need a collection of items that should not change.
+
+3. **Dictionary Keys**: Tuples can be used as keys in dictionaries because they are immutable.
+   ```python
+   my_dict = {(1, 2): 'value'}
+   ```
+
+### Advantages of Tuples
+
+- **Immutability**: Provides data integrity and can be used as keys in dictionaries.
+- **Performance**: Tuples can be more memory-efficient and faster than lists due to their immutability.
+- **Clarity**: Tuples can make code more readable when used for fixed collections of items.
+
+### Summary
+
+Tuples are a fundamental data structure in Python, ideal for storing immutable collections of items. They offer a clear and efficient way to handle related data, especially when the data should not be modified.
