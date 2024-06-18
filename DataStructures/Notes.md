@@ -728,7 +728,7 @@ queue.append('b')
 queue.append('c')
 
 print("Initial queue")
-print(queue) 
+print(queue)
 
 # Dequeue
 print("\nElements dequeued from queue")
@@ -967,3 +967,353 @@ print(c)  # Output: 3
 ### Summary
 
 Tuples are a fundamental data structure in Python, ideal for storing immutable collections of items. They offer a clear and efficient way to handle related data, especially when the data should not be modified.
+
+## Swapping Variables
+
+```python
+
+x = 1
+y = 2
+print("before swap")
+print("x ", x)
+print("y ", y)
+# to swap two variables we need a third variable
+z = x
+x = y
+y = z
+
+print("after swap")
+print("x ", x)
+print("y ", y)
+
+# python way
+
+x = 1
+y = 2
+print("before swap")
+print("x ", x)
+print("y ", y)
+
+x, y = y, x
+print("after swap")
+print("x ", x)
+print("y ", y)
+
+```
+
+under the hood we're defining and unpacking a tuple `x, y = y, x` and `x, y = (y, x)` are the same
+
+## Arrays
+
+In Python, arrays are similar to lists, but they are more efficient for numerical operations and are often used in scientific computing and data analysis. There are different types of arrays in Python, the most common being arrays provided by the `array` module and NumPy arrays from the NumPy library. Here, we'll explain both:
+
+### Arrays Using the `array` Module
+
+The `array` module in Python provides a basic array data structure that can store elements of a single data type.
+
+#### Characteristics
+
+1. **Type Constraint**: Elements must be of the same type, specified at array creation.
+2. **Efficiency**: More memory-efficient than lists for large amounts of numerical data.
+
+#### Creating Arrays
+
+You can create arrays using the `array` module by specifying a type code and an initializer list. The type code defines the data type of the array elements.
+
+- **Importing the array module**:
+
+  ```python
+  import array
+  ```
+
+- **Type Codes**:
+
+  - `'b'`: signed integer (1 byte)
+  - `'B'`: unsigned integer (1 byte)
+  - `'u'`: Unicode character (2 bytes)
+  - `'h'`: signed integer (2 bytes)
+  - `'H'`: unsigned integer (2 bytes)
+  - `'i'`: signed integer (2 bytes)
+  - `'I'`: unsigned integer (2 bytes)
+  - `'l'`: signed integer (4 bytes)
+  - `'L'`: unsigned integer (4 bytes)
+  - `'f'`: floating point (4 bytes)
+  - `'d'`: floating point (8 bytes)
+
+- **Creating an array**:
+  ```python
+  arr = array.array('i', [1, 2, 3, 4, 5])  # 'i' stands for signed integer
+  ```
+
+#### Accessing and Modifying Elements
+
+You can access and modify elements using indexing:
+
+```python
+print(arr[0])  # Output: 1
+arr[1] = 7
+print(arr)  # Output: array('i', [1, 7, 3, 4, 5])
+```
+
+#### Array Methods
+
+- **Append an element**:
+
+  ```python
+  arr.append(6)
+  ```
+
+- **Extend with a list of elements**:
+
+  ```python
+  arr.extend([7, 8, 9])
+  ```
+
+- **Insert an element**:
+
+  ```python
+  arr.insert(2, 10)  # Insert 10 at index 2
+  ```
+
+- **Remove an element**:
+
+  ```python
+  arr.remove(10)
+  ```
+
+- **Pop an element**:
+  ```python
+  arr.pop()  # Removes the last element
+  ```
+
+### Arrays Using NumPy
+
+NumPy is a powerful library for numerical computing in Python. It provides the `ndarray` object, which is a more versatile and efficient array than the one provided by the `array` module.
+
+#### Characteristics
+
+1. **Multidimensional**: Supports multi-dimensional arrays.
+2. **Vectorized Operations**: Allows for efficient element-wise operations.
+3. **Numerical Methods**: Provides a wide range of mathematical functions and operations.
+
+#### Creating NumPy Arrays
+
+You can create NumPy arrays using the `numpy` library:
+
+- **Importing NumPy**:
+
+  ```python
+  import numpy as np
+  ```
+
+- **Creating an array**:
+
+  ```python
+  arr = np.array([1, 2, 3, 4, 5])
+  ```
+
+- **Creating arrays with specific values**:
+  ```python
+  zeros = np.zeros(5)        # Array of zeros
+  ones = np.ones((2, 3))     # 2x3 array of ones
+  empty = np.empty(4)        # Array with uninitialized values
+  arange = np.arange(10)     # Array with values from 0 to 9
+  linspace = np.linspace(0, 1, 5)  # Array with 5 values from 0 to 1
+  ```
+
+#### Accessing and Modifying Elements
+
+You can access and modify elements using indexing and slicing:
+
+```python
+print(arr[0])  # Output: 1
+arr[1] = 7
+print(arr)  # Output: [1 7 3 4 5]
+```
+
+#### Array Operations
+
+NumPy supports a variety of operations:
+
+- **Element-wise operations**:
+
+  ```python
+  arr = np.array([1, 2, 3, 4, 5])
+  arr = arr + 1  # Output: [2 3 4 5 6]
+  arr = arr * 2  # Output: [2 4 6 8 10]
+  ```
+
+- **Matrix operations**:
+
+  ```python
+  mat1 = np.array([[1, 2], [3, 4]])
+  mat2 = np.array([[5, 6], [7, 8]])
+  result = mat1.dot(mat2)  # Matrix multiplication
+  ```
+
+- **Statistical operations**:
+  ```python
+  np.mean(arr)  # Mean of the array
+  np.sum(arr)   # Sum of the array
+  np.max(arr)   # Maximum value in the array
+  ```
+
+### Summary
+
+- **Array Module**: Provides basic arrays with a single data type, useful for simple numerical data storage.
+- **NumPy Arrays**: Offers advanced, multi-dimensional arrays with a wide range of mathematical operations, ideal for scientific computing and data analysis.
+
+Both types of arrays have their use cases, with NumPy arrays being the preferred choice for more complex and efficient numerical operations.
+
+## Sets
+
+Sets in Python are an unordered collection of unique elements. They are commonly used for membership testing, removing duplicates from a sequence, and mathematical operations like union, intersection, and difference.
+
+### Characteristics of Sets
+
+1. **Unordered**: Sets do not maintain any order for the elements. The items have no index.
+2. **Unique Elements**: A set automatically ensures that all elements are unique. If duplicates are added, they are ignored.
+3. **Mutable**: Sets themselves are mutable; you can add or remove elements. However, the elements within a set must be immutable (e.g., strings, numbers, tuples).
+
+### Creating Sets
+
+You can create sets using curly braces `{}` or the `set()` function:
+
+- **Using curly braces**:
+
+  ```python
+  my_set = {1, 2, 3}
+  ```
+
+- **Using the `set()` function**:
+
+  ```python
+  my_set = set([1, 2, 3])
+  ```
+
+- **Creating an empty set** (Note: `{}` creates an empty dictionary):
+  ```python
+  empty_set = set()
+  ```
+
+### Adding and Removing Elements
+
+You can modify sets by adding or removing elements:
+
+- **Adding elements**:
+
+  ```python
+  my_set.add(4)  # Adds a single element
+  my_set.update([5, 6])  # Adds multiple elements
+  ```
+
+- **Removing elements**:
+  ```python
+  my_set.remove(2)  # Removes an element; raises KeyError if not found
+  my_set.discard(3)  # Removes an element; does nothing if not found
+  removed_element = my_set.pop()  # Removes and returns an arbitrary element
+  my_set.clear()  # Removes all elements
+  ```
+
+### Set Operations
+
+Sets support a variety of operations, including union, intersection, difference, and symmetric difference:
+
+- **Union**: Combines elements from both sets.
+
+  ```python
+  set1 = {1, 2, 3}
+  set2 = {3, 4, 5}
+  union_set = set1 | set2  # Output: {1, 2, 3, 4, 5}
+  union_set = set1.union(set2)  # Output: {1, 2, 3, 4, 5}
+  ```
+
+- **Intersection**: Returns elements common to both sets.
+
+  ```python
+  intersection_set = set1 & set2  # Output: {3}
+  intersection_set = set1.intersection(set2)  # Output: {3}
+  ```
+
+- **Difference**: Returns elements in the first set but not in the second.
+
+  ```python
+  difference_set = set1 - set2  # Output: {1, 2}
+  difference_set = set1.difference(set2)  # Output: {1, 2}
+  ```
+
+- **Symmetric Difference**: Returns elements in either set but not in both.
+  ```python
+  sym_diff_set = set1 ^ set2  # Output: {1, 2, 4, 5}
+  sym_diff_set = set1.symmetric_difference(set2)  # Output: {1, 2, 4, 5}
+  ```
+
+### Membership Testing
+
+Sets are optimized for membership testing. It is very efficient to check if an element is in a set:
+
+```python
+if 2 in set1:
+    print("2 is in the set")
+```
+
+### Iterating Through a Set
+
+You can iterate through a set using a loop:
+
+```python
+for element in set1:
+    print(element)
+```
+
+### Set Comprehensions
+
+Similar to list comprehensions, you can create sets using set comprehensions:
+
+```python
+squared_set = {x**2 for x in range(5)}  # Output: {0, 1, 4, 9, 16}
+```
+
+### Frozensets
+
+A frozenset is an immutable version of a set. You can create a frozenset using the `frozenset()` function:
+
+```python
+my_frozenset = frozenset([1, 2, 3])
+```
+
+Frozensets can be used as dictionary keys or elements of other sets because they are immutable.
+
+### Common Set Methods
+
+- `add(element)`: Adds an element to the set.
+- `remove(element)`: Removes an element from the set; raises KeyError if not found.
+- `discard(element)`: Removes an element from the set if it is a member; does nothing if not found.
+- `pop()`: Removes and returns an arbitrary element from the set.
+- `clear()`: Removes all elements from the set.
+- `union(set2)`: Returns the union of two sets.
+- `intersection(set2)`: Returns the intersection of two sets.
+- `difference(set2)`: Returns the difference of two sets.
+- `symmetric_difference(set2)`: Returns the symmetric difference of two sets.
+
+### Use Cases of Sets
+
+1. **Removing Duplicates**: Converting a list to a set removes duplicates.
+
+   ```python
+   my_list = [1, 2, 2, 3, 4, 4]
+   my_set = set(my_list)  # Output: {1, 2, 3, 4}
+   ```
+
+2. **Membership Testing**: Checking if an item is part of a collection.
+
+   ```python
+   if 'apple' in my_set:
+       print("Apple is in the set")
+   ```
+
+3. **Mathematical Set Operations**: Performing union, intersection, and difference operations.
+
+### Summary
+
+Sets in Python are a powerful tool for storing unique elements and performing membership tests and set operations. Their unique characteristics make them suitable for tasks that involve the manipulation and comparison of large collections of data.
