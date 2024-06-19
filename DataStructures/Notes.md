@@ -1456,3 +1456,137 @@ print(nested_dict["details"]["age"])  # Output: 25
 ### Summary
 
 Dictionaries are a powerful and flexible data structure in Python for storing and managing key-value pairs. They offer efficient data retrieval and are essential for many programming tasks involving structured data and fast lookups.
+
+## Generators
+
+Generators in Python are a type of iterable, like lists or tuples. However, unlike lists, generators do not store their contents in memory; instead, they generate items on the fly, which makes them more memory efficient, especially when dealing with large data sets.
+
+### Characteristics of Generators
+
+1. **Lazy Evaluation**: Generators produce items one at a time and only when needed. This is known as lazy evaluation.
+2. **Memory Efficiency**: Since they generate items one at a time, they are more memory efficient compared to lists that store all elements at once.
+3. **Single Iteration**: Generators can only be iterated over once. After the generator is exhausted, it cannot be reused or reset.
+
+### Creating Generators
+
+You can create generators in two main ways: using generator functions and generator expressions.
+
+#### Generator Functions
+
+A generator function is defined like a normal function, but instead of returning a value, it uses the `yield` statement to yield a series of values.
+
+- **Defining a generator function**:
+
+  ```python
+  def count_up_to(max):
+      count = 1
+      while count <= max:
+          yield count
+          count += 1
+  ```
+
+- **Using the generator**:
+  ```python
+  counter = count_up_to(5)
+  for num in counter:
+      print(num)
+  # Output: 1 2 3 4 5
+  ```
+
+#### Generator Expressions
+
+Generator expressions are similar to list comprehensions but with parentheses instead of square brackets. They provide a concise way to create generators.
+
+- **Creating a generator expression**:
+
+  ```python
+  gen_exp = (x**2 for x in range(10))
+  ```
+
+- **Using the generator expression**:
+  ```python
+  for num in gen_exp:
+      print(num)
+  # Output: 0 1 4 9 16 25 36 49 64 81
+  ```
+
+### Differences Between `yield` and `return`
+
+- **`yield`**: When a function contains `yield`, it becomes a generator function. `yield` pauses the function and saves its state, returning a value to the caller.
+- **`return`**: Ends the function's execution and optionally returns a value to the caller. A function with `return` is not a generator.
+
+### Advantages of Generators
+
+1. **Memory Efficiency**: Generators do not store the entire sequence in memory. They generate each value only when needed.
+2. **Representing Infinite Sequences**: Generators can represent infinite sequences. For example, the Fibonacci sequence can be implemented using a generator.
+3. **Pipelining Generators**: Generators can be pipelined, allowing data to be processed in stages, each stage represented by a generator.
+
+### Example: Fibonacci Generator
+
+Here's an example of a generator that produces Fibonacci numbers:
+
+```python
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+# Using the generator
+fib = fibonacci()
+for _ in range(10):
+    print(next(fib))
+# Output: 0 1 1 2 3 5 8 13 21 34
+```
+
+### Generator Methods
+
+Generators have a few built-in methods that control their execution:
+
+- **`__iter__()`** and **`__next__()`**: Generators are iterators and have these methods implemented. `__next__()` fetches the next item.
+
+  ```python
+  gen = (x**2 for x in range(3))
+  print(next(gen))  # Output: 0
+  print(next(gen))  # Output: 1
+  print(next(gen))  # Output: 4
+  ```
+
+- **`send(value)`**: Resumes the generator and sends a value that will be used to replace the current `yield` expression.
+
+  ```python
+  def generator():
+      while True:
+          value = yield
+          print(f'Received: {value}')
+
+  gen = generator()
+  next(gen)           # Prime the generator
+  gen.send('Hello')   # Output: Received: Hello
+  ```
+
+- **`close()`**: Stops the generator by raising a `GeneratorExit` exception inside the generator function.
+
+  ```python
+  gen = (x**2 for x in range(3))
+  gen.close()
+  ```
+
+- **`throw(type, value=None, traceback=None)`**: Used to raise an exception inside the generator at the `yield` statement.
+
+  ```python
+  def generator():
+      try:
+          yield
+      except ValueError:
+          print("ValueError raised inside generator")
+
+  gen = generator()
+  next(gen)
+  gen.throw(ValueError)
+  # Output: ValueError raised inside generator
+  ```
+
+### Summary
+
+Generators in Python provide a powerful tool for creating iterators that generate values on the fly, making them memory-efficient and suitable for handling large or infinite sequences. They are created using `yield` in functions or generator expressions and offer several methods to control their execution. Generators are essential for writing clean, efficient, and scalable Python code.
