@@ -1590,3 +1590,106 @@ Generators have a few built-in methods that control their execution:
 ### Summary
 
 Generators in Python provide a powerful tool for creating iterators that generate values on the fly, making them memory-efficient and suitable for handling large or infinite sequences. They are created using `yield` in functions or generator expressions and offer several methods to control their execution. Generators are essential for writing clean, efficient, and scalable Python code.
+
+## Unpacking Operator
+
+In Python, the unpacking operator (`*` and `**`) allows for the unpacking of iterables (such as lists or tuples) and dictionaries into function arguments or other data structures. Here's a detailed explanation of both unpacking operators:
+
+### Single Asterisk (\*) for Iterables
+
+The single asterisk `*` is used to unpack iterables. This can be useful in various contexts:
+
+#### Function Arguments
+
+You can use `*` to unpack a list or tuple into positional arguments of a function.
+
+```python
+def func(a, b, c):
+    print(a, b, c)
+
+args = [1, 2, 3]
+func(*args)  # This is equivalent to func(1, 2, 3)
+```
+
+#### Merging Lists
+
+You can use `*` to merge lists or other iterables.
+
+```python
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+merged_list = [*list1, *list2]
+print(merged_list)  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+#### Variable-Length Argument Lists
+
+When defining a function, you can use `*args` to accept a variable number of positional arguments.
+
+```python
+def func(*args):
+    for arg in args:
+        print(arg)
+
+func(1, 2, 3)  # This will print 1, 2, 3 on separate lines
+```
+
+### Double Asterisk (\*\*) for Dictionaries
+
+The double asterisk `**` is used to unpack dictionaries into keyword arguments.
+
+#### Function Arguments
+
+You can use `**` to unpack a dictionary into keyword arguments of a function.
+
+```python
+def func(a, b, c):
+    print(a, b, c)
+
+kwargs = {'a': 1, 'b': 2, 'c': 3}
+func(**kwargs)  # This is equivalent to func(a=1, b=2, c=3)
+```
+
+#### Merging Dictionaries
+
+You can use `**` to merge dictionaries.
+
+```python
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
+merged_dict = {**dict1, **dict2}
+print(merged_dict)  # Output: {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+```
+
+#### Variable-Length Keyword Arguments
+
+When defining a function, you can use `**kwargs` to accept a variable number of keyword arguments.
+
+```python
+def func(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+
+func(a=1, b=2, c=3)  # This will print each key-value pair
+```
+
+### Combining \* and \*\* in Function Calls
+
+You can combine both `*` and `**` in function calls to unpack both iterables and dictionaries.
+
+```python
+def func(a, b, c, d):
+    print(a, b, c, d)
+
+args = (1, 2)
+kwargs = {'c': 3, 'd': 4}
+func(*args, **kwargs)  # This is equivalent to func(1, 2, c=3, d=4)
+```
+
+### Summary
+
+- `*` is used to unpack iterables into positional arguments or merge iterables.
+- `**` is used to unpack dictionaries into keyword arguments or merge dictionaries.
+- Both can be used in function definitions to handle variable numbers of positional and keyword arguments, respectively.
+
+These unpacking operators make Python functions flexible and powerful, allowing for more dynamic and concise code.
