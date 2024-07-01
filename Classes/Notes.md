@@ -57,3 +57,94 @@ print(dog1.species)      # Output: Canis familiaris
 print(dog1.description())  # Output: Buddy is 9 years old
 print(dog1.speak('Woof'))  # Output: Buddy says Woof
 ```
+
+### Instance Methods and Attributes
+
+#### Instance Methods
+
+Instance methods are the most common type of methods in Python. They operate on an instance of the class, and they can access and modify the instance's attributes. When defining an instance method, you must include `self` as the first parameter, which refers to the specific instance of the class.
+
+Example:
+
+```python
+class MyClass:
+    def __init__(self, value):
+        self.value = value  # Instance attribute
+
+    def instance_method(self):
+        return self.value  # Accessing instance attribute
+```
+
+Here, `instance_method` is an instance method that can access `self.value`, which is an instance attribute.
+
+#### Instance Attributes
+
+Instance attributes are variables that are specific to each instance of a class. They are usually defined within the `__init__` method, which is the initializer method for the class.
+
+Example:
+
+```python
+class MyClass:
+    def __init__(self, value):
+        self.value = value  # Instance attribute
+```
+
+Each instance of `MyClass` can have a different value for `self.value`.
+
+### Class Methods and Attributes
+
+#### Class Methods
+
+Class methods are methods that are bound to the class and not the instance of the class. They take `cls` as the first parameter, which refers to the class itself. Class methods can access class attributes but not instance attributes. You can define a class method using the `@classmethod` decorator.
+
+Example:
+
+```python
+class MyClass:
+    class_attribute = 'I am a class attribute'
+
+    @classmethod
+    def class_method(cls):
+        return cls.class_attribute  # Accessing class attribute
+```
+
+Here, `class_method` is a class method that can access `cls.class_attribute`, which is a class attribute.
+
+#### Class Attributes
+
+Class attributes are variables that are shared among all instances of a class. They are defined within the class body, but outside any instance methods.
+
+Example:
+
+```python
+class MyClass:
+    class_attribute = 'I am a class attribute'  # Class attribute
+```
+
+All instances of `MyClass` share the same `class_attribute`.
+
+### Differences
+
+1. **Binding**:
+
+   - **Instance Methods**: Bound to an instance of the class. Accessed using the instance (`instance.method()`).
+   - **Class Methods**: Bound to the class itself. Accessed using the class (`Class.method()`) or an instance (`instance.method()`), though the latter is less common.
+
+2. **First Parameter**:
+
+   - **Instance Methods**: Take `self` as the first parameter, referring to the instance.
+   - **Class Methods**: Take `cls` as the first parameter, referring to the class.
+
+3. **Attributes Access**:
+   - **Instance Methods**: Can access both instance attributes and class attributes.
+   - **Class Methods**: Can access only class attributes.
+
+### Summary
+
+- **Instance Methods**: Operate on instances; first parameter is `self`.
+- **Instance Attributes**: Specific to each instance; defined in `__init__`.
+- **Class Methods**: Operate on the class; first parameter is `cls`; defined with `@classmethod`.
+- **Class Attributes**: Shared among all instances; defined in the class body.
+- **Static Methods**: Do not operate on instance or class; no `self` or `cls`; defined with `@staticmethod`.
+
+Understanding these distinctions helps in designing clean, maintainable, and efficient object-oriented code in Python.

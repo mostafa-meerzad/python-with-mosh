@@ -35,6 +35,7 @@ print(point2.x)
 print(point2.y)
 print(point2.draw())
 
+
 # ----------------------------------------
 class Point:
     defaultColor = "red"
@@ -62,8 +63,26 @@ print(f"default color in point1 object: {point1.defaultColor}")
 print(f"default color in point2 object: {point2.defaultColor}")
 print(f"default color in Point class: {Point.defaultColor}")
 
-Point.defaultColor = "yellow" # changing a class attribute will be seen in all instances objects of that class
+Point.defaultColor = "yellow"  # changing a class attribute will be seen in all instances objects of that class
 
 print(f"default color in point1 object: {point1.defaultColor}")
 print(f"default color in point2 object: {point2.defaultColor}")
 print(f"default color in Point class: {Point.defaultColor}")
+# ----------------------------------
+
+
+class Point:
+    defaultColor = "red"
+
+    def __init__(self) -> None:
+        pass
+
+    @classmethod
+    def classMethod(cls):
+        print(cls.defaultColor)
+
+        print("I'm a class method")
+
+
+myPoint = Point()
+myPoint.classMethod()
