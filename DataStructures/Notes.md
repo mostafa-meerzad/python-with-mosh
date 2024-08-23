@@ -182,7 +182,7 @@ print(generatedLetters)
 
 lists are 0 based index and its elements is accessed using `listName[index]`, index 0 is the first element` list-length - 1` is the last element, positive index gives element form start to end, negative index give element form the end
 
-`listName[-1]` returns the very-first element
+`listName[0]` returns the very-first element
 
 accessing an element outside the list range throws an `IndexError`
 

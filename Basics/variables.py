@@ -30,8 +30,8 @@ def sayHi():
         other = "CONDITIONAL" # var defined inside code-block
 
     for x in [1,2]:
-        print(x)
-        print(message)
+        # print("x value ", x)
+        print(x, " ", message)
         another = "LOOP" # var defined inside loop body
 
     print("var defined in conditional statement ", other)

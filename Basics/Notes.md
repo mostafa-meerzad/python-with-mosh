@@ -616,7 +616,7 @@ In Python we have two types of variables:
 2. function level variables:
    variables defined inside functions are only visible/accessible inside those functions
 
-variables in python are not block leve unlike other programming languages which means variables defined inside a
+variables in python are not block level unlike other programming languages which means variables defined inside a
 block of code is accessible to the outside scope as well
 
 ```python
@@ -631,7 +631,7 @@ def greet():
     # like so
     message = "new message"
     # python will create another local variable with the same name 'message' and assign it the new value
-    # doing so as no effect on the global value
+    # doing so has no effect on the global value
 
     print(message)  # message is now a local variable and has 'new message'
 
