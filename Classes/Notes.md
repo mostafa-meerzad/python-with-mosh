@@ -635,3 +635,132 @@ In this case, `__age` is intended to be private, and direct access like `person.
 In the example you referred to (`self._age = age`), a single underscore is used because it's a common practice in Python to denote protected attributes. If you require stricter encapsulation, you would use a double underscore instead.
 
 ## Inheritance
+
+Inheritance in Python is a fundamental concept in object-oriented programming that allows a class (known as a child or derived class) to inherit attributes and methods from another class (known as a parent or base class). This promotes code reuse and helps in creating a hierarchical structure between classes.
+
+### Key Concepts of Inheritance
+
+1. **Parent (Base) Class**: The class whose properties and methods are inherited.
+2. **Child (Derived) Class**: The class that inherits properties and methods from the parent class.
+
+### Syntax
+
+```python
+class Parent:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print(f"Hello, {self.name}!")
+
+class Child(Parent):
+    def __init__(self, name, age):
+        super().__init__(name)  # Initialize the parent class
+        self.age = age
+
+    def show_age(self):
+        print(f"{self.name} is {self.age} years old.")
+```
+
+### Explanation
+
+- **Inheritance Declaration**: The `Child` class inherits from the `Parent` class, which is indicated by the syntax `class Child(Parent):`.
+- **`super()` Function**: In the `Child` class, `super().__init__(name)` is used to call the constructor of the `Parent` class. This allows the `Child` class to inherit the `name` attribute from the `Parent` class.
+- **Accessing Parent Class Methods**: The `Child` class can access methods of the `Parent` class (like `greet()`), and it can also have its own methods (like `show_age()`).
+
+### Example Usage
+
+```python
+# Create an instance of Child class
+child_instance = Child("Alice", 12)
+
+# Call the inherited method
+child_instance.greet()  # Output: Hello, Alice!
+
+# Call the method from the Child class
+child_instance.show_age()  # Output: Alice is 12 years old.
+```
+
+### Types of Inheritance
+
+1. **Single Inheritance**: A child class inherits from one parent class.
+
+   ```python
+   class A:
+       pass
+
+   class B(A):
+       pass
+   ```
+
+2. **Multiple Inheritance**: A child class inherits from more than one parent class.
+
+   ```python
+   class A:
+       pass
+
+   class B:
+       pass
+
+   class C(A, B):
+       pass
+   ```
+
+3. **Multilevel Inheritance**: A child class inherits from a parent class, which itself is a child of another class.
+
+   ```python
+   class A:
+       pass
+
+   class B(A):
+       pass
+
+   class C(B):
+       pass
+   ```
+
+4. **Hierarchical Inheritance**: Multiple child classes inherit from the same parent class.
+
+   ```python
+   class A:
+       pass
+
+   class B(A):
+       pass
+
+   class C(A):
+       pass
+   ```
+
+5. **Hybrid Inheritance**: A combination of two or more types of inheritance.
+
+### Method Overriding
+
+In inheritance, a child class can override methods from the parent class to change or extend their behavior.
+
+```python
+class Parent:
+    def greet(self):
+        print("Hello from Parent!")
+
+class Child(Parent):
+    def greet(self):  # Overriding the parent method
+        print("Hello from Child!")
+
+# Using the Child class
+child_instance = Child()
+child_instance.greet()  # Output: Hello from Child!
+```
+
+In this example, the `greet` method in the `Child` class overrides the `greet` method of the `Parent` class.
+
+### Conclusion
+
+Inheritance is a powerful feature in Python that allows classes to reuse code, build on existing functionality, and create a more organized and hierarchical structure in your programs.
+
+```python
+
+isinstance(obj, class) # returns a boolean "True" if obj object is an instance of provided class "False" otherwise
+
+issubclass(subClass, class) # returns a boolean  "True" if subClass is inheriting from class otherwise "False"
+```
