@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 myList = [1,2,3,5, "something"]
 
 print(myList.count(1))
@@ -15,4 +18,10 @@ print(newList)
 
 print("---------------------")
 
-print(myList[100])
+# print(myList[100])
+
+print("=================================================")
+
+path = Path()
+for p in path.iterdir():
+    print(p)
