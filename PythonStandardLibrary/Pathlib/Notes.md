@@ -39,7 +39,7 @@ The `pathlib` module in Python provides an object-oriented approach to working w
 
 3. **Reading and Writing Files**:
 
-   - **Reading**: You can open and read a file using the `open()` method.
+   - **Reading**: You can open and read a file using the `read_text()` method.
      ```python
      content = path.read_text()
      ```

@@ -686,3 +686,70 @@ sayHi()
 ```
 
 **Note**: avoid using/modifying global variables because there might be other functions and parts of code relying on the value of it, this is a bad practice!
+
+Sure! Let's break down these concepts: iterators, iterables, and iteration.
+
+### 1. **Iterables**
+
+An **iterable** is any Python object capable of returning its members one at a time, allowing it to be looped over in a `for` loop. Examples of iterables include lists, tuples, strings, dictionaries, and sets.
+
+An object is iterable if it implements the `__iter__()` method, which returns an iterator.
+
+**Example:**
+
+```python
+my_list = [1, 2, 3]
+for item in my_list:
+    print(item)
+```
+
+In this example, `my_list` is an iterable. You can loop over it using a `for` loop.
+
+### 2. **Iterators**
+
+An **iterator** is an object that represents a stream of data; it fetches one element at a time from an iterable when asked to do so. Iterators are used to loop through an iterable, like lists or tuples.
+
+An object is an iterator if it implements the `__next__()` method, which returns the next item from the sequence or raises a `StopIteration` exception when there are no more items.
+
+Iterators also implement the `__iter__()` method, which allows them to be used in a `for` loop or any place that requires an iterable.
+
+**Example:**
+
+```python
+my_list = [1, 2, 3]
+iterator = iter(my_list)  # Convert the list to an iterator
+
+print(next(iterator))  # Output: 1
+print(next(iterator))  # Output: 2
+print(next(iterator))  # Output: 3
+# print(next(iterator))  # This would raise StopIteration because the iterator is exhausted
+```
+
+Here, `iter(my_list)` converts `my_list` into an iterator, and `next(iterator)` fetches the next item in the sequence.
+
+### 3. **Iteration**
+
+**Iteration** is the process of going through the elements of an iterable one by one. When you use a `for` loop in Python, you're iterating over an iterable. Behind the scenes, Python automatically creates an iterator from the iterable and then uses the iterator to fetch each item.
+
+**Example:**
+
+```python
+for item in [1, 2, 3]:
+    print(item)
+```
+
+In this example, the `for` loop automatically creates an iterator from the list `[1, 2, 3]` and iterates over each item.
+
+### Putting It All Together
+
+- **Iterable**: An object you can loop over (e.g., lists, strings).
+- **Iterator**: An object that produces the items from an iterable one at a time.
+- **Iteration**: The process of looping over the items in an iterable.
+
+To sum up:
+
+- **Iterables** are objects that can be looped over.
+- **Iterators** are objects that perform the actual iteration.
+- **Iteration** is the act of looping over the iterable.
+
+These concepts are fundamental to understanding how loops and sequences work in Python.
