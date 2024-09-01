@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 # ----------------------------- writing data to a json file -------------
 
@@ -33,3 +34,14 @@ data = {
 
 json_data = json.dumps(data)
 print(json_data)
+
+data = [
+    {"id": 1, "name": "sky fall", "year": "2017"},
+    {"id": 2,"name": "terminator", "year": "1989"}
+]
+
+with Path("movies.json") as path:
+    path.write_text(json.dumps(data))
+    
+with open("movies2.json", 'w') as file:
+    json.dump(data, file)
