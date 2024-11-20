@@ -38,7 +38,7 @@ class Dog:
 
 ### Creating Instances
 
-To create an instance of a class, you call the class as if it were a function:
+To create an instance of a class, you call the class as if it was a function:
 
 ```python
 dog1 = Dog('Buddy', 9)

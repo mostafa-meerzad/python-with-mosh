@@ -1,7 +1,6 @@
 from pathlib import Path
 
-
-myList = [1,2,3,5, "something"]
+myList = [1, 2, 3, 5, "something"]
 
 print(myList.count(1))
 print(myList.append(55))
@@ -13,7 +12,7 @@ print(myList)
 # myList.clear()
 print(myList)
 
-newList = myList + [2,3,5,5,5,55,]
+newList = myList + [2, 3, 5, 5, 5, 55, ]
 print(newList)
 
 print("---------------------")
